@@ -1,0 +1,16 @@
+# Настройка конфигурации сервера
+# Выбор кодировки
+AddDefaultCharset utf-8
+
+# Включить перенаправление
+RewriteEngine on
+
+# Базовая директория
+RewriteBase /mvc
+
+# Настройка внутренних файлов типа каринки и стили
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Все запросы направлять на этот адрес
+RewriteRule ^(.*)$ index.php
